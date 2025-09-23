@@ -1,41 +1,41 @@
-project/
-├── config/
-│   └── settings.py       # Configuration settings
-├── modules/
-│   ├── __init__.py       # Makes modules a package
-│   ├── cleaner.py        # Data cleaning functionality
-│   ├── transformer.py    # Data transformation
-│   └── reducer.py        # Data dimentionality reduction
-│   └── validator.py      # Data validation
-├── data/                 # Directory for input data files
-├── output/               # Directory for processed output
-├── main.py               # Main loading and execution script
-└── README.md            
+-project/
+-├── config/
+-│   └── settings.py       # Configuration settings
+-├── modules/
+-│   ├── __init__.py       # Makes modules a package
+-│   ├── cleaner.py        # Data cleaning functionality
+-│   ├── transformer.py    # Data transformation
+-│   └── reducer.py        # Data dimentionality reduction
+-│   └── validator.py      # Data validation
+-├── data/                 # Directory for input data files
+-├── output/               # Directory for processed output
+-├── main.py               # Main loading and execution script
+-└── README.md            
 
 
-Gender
-Age
-Height
-Weight
-Family_history_with_overweight
-FAVC (Frequent consumption of high-caloric food)
-FCVC (Frequency of consumption of vegetables)
-NCP (Number of main meals)
-CAEC (Consumption of food between meals)
-SMOKE
-CH2O (Daily water consumption)
-SCC (Caloric beverages consumption)
-FAF (Physical activity frequency)
-TUE (Time spent using technological devices)
-CALC (Consumption of alcohol)
-MTRANS (Mode of transportation)
-0be1dad (Target variable representing obesity level)
+* Gender
+* Age
+* Height
+* Weight
+* Family_history_with_overweight
+* FAVC (Frequent consumption of high-caloric food)
+* FCVC (Frequency of consumption of vegetables)
+* NCP (Number of main meals)
+* CAEC (Consumption of food between meals)
+* SMOKE
+* CH2O (Daily water consumption)
+* SCC (Caloric beverages consumption)
+* FAF (Physical activity frequency)
+* TUE (Time spent using technological devices)
+* CALC (Consumption of alcohol)
+* MTRANS (Mode of transportation)
+* 0be1dad (Target variable representing obesity level)
 
 
 1. Data Loading:
 
-    File Format: The data is loaded from either a .csv or .xlsx file.
-    Function: load_data() handles this, selecting the appropriate method based on the file extension.
+    * File Format: The data is loaded from either a .csv or .xlsx file.
+    * Function: load_data() handles this, selecting the appropriate method based on the file extension.
 
 2. Data Validation:
 
@@ -45,8 +45,8 @@ MTRANS (Mode of transportation)
 
 3. Removing Duplicates:
 
-    Function: The remove_duplicates() function removes duplicate rows.
-    Action: The dataset is cleaned to ensure no repeated records.
+    * Function: The remove_duplicates() function removes duplicate rows.
+    * Action: The dataset is cleaned to ensure no repeated records.
 
 4. Handling Missing Values:
 
@@ -56,8 +56,8 @@ MTRANS (Mode of transportation)
 
 5. Standardizing Columns:
 
-    Renaming Columns: The column names are standardized using the COLUMN_RENAME_MAP from the settings.
-    Action: Columns like NCP are renamed to more descriptive names, improving consistency.
+    * Renaming Columns: The column names are standardized using the COLUMN_RENAME_MAP from the settings.
+    * Action: Columns like NCP are renamed to more descriptive names, improving consistency.
 
 6. Reducing Dataset:
 
@@ -69,13 +69,13 @@ MTRANS (Mode of transportation)
 
 7. Saving the Cleaned Data:
 
-    File Saving: The cleaned dataset is saved to a new CSV file in the output directory.
-    Output Path: cleaned_<filename>.csv is generated and stored.
+    * File Saving: The cleaned dataset is saved to a new CSV file in the output directory.
+    * Output Path: cleaned_<filename>.csv is generated and stored.
 
 8. Reporting:
 
-    Minimal Reporting: The process prints reports about what was cleaned, such as:
-    Number of duplicate rows removed.
-    Number of rows dropped due to missing values.
-    Columns renamed.
-    Any reductions applied (e.g., rows or columns dropped, BMI created).
+    * Minimal Reporting: The process prints reports about what was cleaned, such as:
+    * Number of duplicate rows removed.
+    * Number of rows dropped due to missing values.
+    * Columns renamed.
+    * Any reductions applied (e.g., rows or columns dropped, BMI created).
