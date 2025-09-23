@@ -1,16 +1,16 @@
--project/
--├── config/
--│   └── settings.py       # Configuration settings
--├── modules/
--│   ├── __init__.py       # Makes modules a package
--│   ├── cleaner.py        # Data cleaning functionality
--│   ├── transformer.py    # Data transformation
--│   └── reducer.py        # Data dimentionality reduction
--│   └── validator.py      # Data validation
--├── data/                 # Directory for input data files
--├── output/               # Directory for processed output
--├── main.py               # Main loading and execution script
--└── README.md            
+* project/
+* ├── config/
+* │   └── settings.py       # Configuration settings
+* ├── modules/
+* │   ├── __init__.py       # Makes modules a package
+* │   ├── cleaner.py        # Data cleaning functionality
+* │   ├── transformer.py    # Data transformation
+* │   └── reducer.py        # Data dimentionality reduction
+* │   └── validator.py      # Data validation
+* ├── data/                 # Directory for input data files
+* ├── output/               # Directory for processed output
+* ├── main.py               # Main loading and execution script
+* └── README.md            
 
 
 * Gender
