@@ -71,7 +71,7 @@ VALIDATION = {
 
 REDUCTION = {
     # 0) Optional row downsampling for dev speed (set None to keep all)
-    "ROW_SAMPLE_MAX": 10000,            # e.g., 50000 to cap rows
+    #"ROW_SAMPLE_MAX": 10000,            # e.g., 50000 to cap rows
     "ROW_SAMPLE_STRATIFY": True,       # keep class balance if label present
 
     # 1) Drop explicit columns (IDs, free text you don't use, etc.)
