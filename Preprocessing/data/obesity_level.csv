@@ -6,7 +6,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 4,Male,31.641081,1.914186,93.798055,1,1,2.679664,1.971472,Sometimes,0,1.979848,0,1.967973,0.931721,Sometimes,Public_Transportation,Overweight_Level_II
 5,Male,18.128249,1.748524,51.552595,1,1,2.919751,3,Sometimes,0,2.13755,0,1.930033,1,Sometimes,Public_Transportation,Insufficient_Weight
 6,Male,29.883021,1.754711,112.725005,1,1,1.99124,3,Sometimes,0,2,0,0,0.696948,Sometimes,Automobile,Obesity_Type_II
-7,Male,29.891473,1.75015,118.206565,1,1,1.397468,3,Sometimes,0,2,0,0.598655,0,Sometimes,Automobile,Obesity_Type_II
+7,Male,29.891473,,118.206565,1,1,1.397468,3,Sometimes,0,2,0,0.598655,0,Sometimes,Automobile,Obesity_Type_II
 8,Male,17,1.7,70,0,1,2,3,Sometimes,0,3,1,1,1,0,Public_Transportation,Overweight_Level_I
 9,Female,26,1.638836,111.275646,1,1,3,3,Sometimes,0,2.632253,0,0,0.218645,Sometimes,Public_Transportation,Obesity_Type_III
 10,Female,20,1.65,65,1,1,3,3,Sometimes,0,3,0,1,0,Sometimes,Public_Transportation,Overweight_Level_I
@@ -32,7 +32,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 30,Male,23.118327,1.851123,119.841446,1,1,2.203962,2.954446,Sometimes,0,2.854161,0,1.19102,0,Sometimes,Public_Transportation,Obesity_Type_II
 31,Male,23,1.7,97,1,0,2,3,Sometimes,0,3,0,3,0,0,Public_Transportation,Obesity_Type_I
 32,Female,26,1.641918,111.949972,1,1,3,3,Sometimes,0,2.632224,0,0,0.232858,Sometimes,Public_Transportation,Obesity_Type_III
-33,Male,26.947786,1.717601,86.464843,1,1,2.971588,3,Sometimes,0,1.726109,0,0,0.453649,Sometimes,Automobile,Overweight_Level_II
+33,Male,26.947786,1.717601,,1,1,2.971588,3,Sometimes,0,1.726109,0,0,0.453649,Sometimes,Automobile,Overweight_Level_II
 34,Male,29.883021,1.75,119.117122,1,1,2.668949,3,Sometimes,0,2.939492,0,1.999836,0.831412,Sometimes,Automobile,Obesity_Type_II
 35,Female,18.634286,1.692646,79.697278,0,1,1.98989905,1.893811,Sometimes,0,1,0,1,0.704978,Sometimes,Public_Transportation,Overweight_Level_I
 36,Male,20,1.7,80,1,1,2,3,Sometimes,0,3,0,2,1,Sometimes,Public_Transportation,Overweight_Level_II
@@ -44,6 +44,8 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 42,Male,21.81119,1.657496,85,1,1,2,3,Sometimes,0,2.371015,0,1,0,0,Public_Transportation,Obesity_Type_I
 43,Female,25.982261,1.678201,107.378702,1,1,3,3,Sometimes,0,1.509734,0,0.035928,0.868788,Sometimes,Public_Transportation,Obesity_Type_III
 44,Male,19,1.74,78,1,0,3,3,Sometimes,0,2,0,1,0,0,Public_Transportation,Overweight_Level_II
+414,Female,21,1.62,68,0,1,2,-3.038361576,Sometimes,0,1,0,1,0,0,Public_Transportation,0rmal_Weight
+462,Female,26,1.621167,110.676343,1,1,3,-3.038361576,Sometimes,0,2.708927,0,0,0.33929,Sometimes,Public_Transportation,Obesity_Type_III
 45,Female,21,1.55,68,0,1,2,3,Frequently,0,2,0,2,1,Sometimes,Public_Transportation,Overweight_Level_I
 46,Male,30.686701,1.835271,120.998266,1,1,2.219186,2.937989,Sometimes,0,2.109697,0,1.628637,0,0,Public_Transportation,Obesity_Type_II
 47,Female,26,1.62495,111.946321,1,1,3,3,Sometimes,0,2.770125,0,0,0.09776,Sometimes,Public_Transportation,Obesity_Type_III
@@ -63,6 +65,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 61,Male,22.77789,1.709731,97.350366,1,1,2,1.437959,Sometimes,0,2,0,0.463891,1.239038,Sometimes,Public_Transportation,Obesity_Type_I
 62,Female,26,1.611462,111.939671,1,1,3,3,Sometimes,0,2.621976,0,0,0.479221,Sometimes,Public_Transportation,Obesity_Type_III
 63,Male,22,1.8,65,0,1,3,3,Sometimes,0,2,0,2,0,0,Public_Transportation,0rmal_Weight
+,Female,21,1.64,50,0,0,2,-3.038361576,Sometimes,0,1,0,3,1,Sometimes,Public_Transportation,0rmal_Weight
 64,Male,23.454558,1.763215,117.384745,1,1,2,2.989791,Sometimes,0,2,0,1.818052,0.631217,Sometimes,Public_Transportation,Obesity_Type_II
 65,Female,18,1.63,50,0,0,3,4,Frequently,0,2,0,2,1,Sometimes,Public_Transportation,Insufficient_Weight
 66,Female,22.884722,1.622241,82,1,1,1.754401,1,Sometimes,0,2.165048,0,0,0.301909,Sometimes,Public_Transportation,Obesity_Type_I
@@ -3901,7 +3904,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 3899,Female,30.945369,1.695417,78,1,0,2,3,Sometimes,0,1,0,0.023574,1.30491,0,Public_Transportation,Overweight_Level_II
 3900,Male,18,1.721348,50.287967,1,1,2.277436,3.489918,Sometimes,0,1.967591,0,2,1,Sometimes,Public_Transportation,Insufficient_Weight
 3901,Female,22.884722,1.622999,82,1,1,1.00876,1,Sometimes,0,2,0,0,1.772463,Sometimes,Public_Transportation,Obesity_Type_I
-3902,Male,30.607546,1.860292,123.721352,1,1,2.002784,3,Sometimes,0,2.293066,0,0.693732,0,Sometimes,Automobile,Obesity_Type_II
+3902,Male,30.607546,,123.721352,1,1,2.002784,3,Sometimes,0,2.293066,0,0.693732,0,Sometimes,Automobile,Obesity_Type_II
 3903,Male,22,1.8,72,1,1,3,3,Sometimes,0,2,0,3,0,Sometimes,Automobile,0rmal_Weight
 3904,Male,19.627,1.797523,85.302146,1,1,2,3.371832,Sometimes,0,3,0,1.987296,0,Sometimes,Public_Transportation,Overweight_Level_I
 3905,Female,21.849705,1.770612,133.963349,1,1,3,3,Sometimes,0,2.825629,0,1.501754,0.835771,Sometimes,Public_Transportation,Obesity_Type_III
@@ -10462,6 +10465,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 10460,Female,28,1.7,78,0,1,1,3,Sometimes,0,2,0,0,1,Frequently,Automobile,Overweight_Level_II
 10461,Female,21,1.65,80,1,0,2,1,Sometimes,0,2,0,1,1,0,Public_Transportation,Overweight_Level_II
 10462,Female,24,1.6,48,0,1,3,1,Sometimes,0,1,0,2,0,Sometimes,Public_Transportation,0rmal_Weight
+5106,Male,30.403205,1.869098,120.60094,1,1,2.79166,-3.038361576,Sometimes,0,2.145368,0,0.766007,1.432336,,Automobile,Obesity_Type_II
 10463,Male,32.610018,1.742654,99.709329,1,1,2.247704,2.358455,Sometimes,0,1,0,1.974656,0,Sometimes,Public_Transportation,Obesity_Type_II
 10464,Female,25.982113,1.609495,104.936381,1,1,3,3,Sometimes,0,2.652616,0,0.098043,0.662489,Sometimes,Public_Transportation,Obesity_Type_III
 10465,Male,23,1.78,64,1,0,2,1,Sometimes,0,2,0,1,1,Sometimes,Public_Transportation,0rmal_Weight
@@ -10477,6 +10481,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 10475,Female,25.976209,1.66494,105.580491,1,1,3,3,Sometimes,0,1.491268,0,0.001297,0.94603,Sometimes,Public_Transportation,Obesity_Type_III
 10476,Female,18,1.627908,65,0,1,1.99124,3.520555,Sometimes,0,1,0,0.085388,1.59405,Sometimes,Public_Transportation,Overweight_Level_I
 10477,Male,41.823567,1.75,118.306544,1,1,2.239634,2.475444,Sometimes,0,2.001208,0,0,0,Sometimes,Automobile,Obesity_Type_II
+7261,Male,28.404332,1.789992,113.234349,1,1,1.572036,-3.038361576,Sometimes,0,2.038958,0,1.579431,0.00133,Sometimes,Automobile,Obesity_Type_II
 10478,Female,19.029494,1.659877,49.597765,1,0,2.919584,3.207071,Frequently,0,2,0,1.327833,1,Sometimes,Public_Transportation,Insufficient_Weight
 10479,Male,21.948577,1.849998,122.024954,1,1,3,2.806298,Sometimes,0,1.591909,0,0.06582,0.543118,Sometimes,Public_Transportation,Obesity_Type_III
 10480,Male,24.825398,1.848965,121.065052,1,1,2.442536,2.644692,Sometimes,0,2.509535,0,1.556155,0,Sometimes,Public_Transportation,Obesity_Type_II
@@ -11984,6 +11989,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 11982,Female,18,1.55,80,1,1,2,1,Sometimes,0,2,0,1,0,Sometimes,Public_Transportation,Overweight_Level_I
 11983,Male,30.717727,1.695347,102.810704,1,1,3,2.13229,Sometimes,0,1,0,0.93732,1.040713,0,Public_Transportation,Obesity_Type_II
 11984,Male,29.970445,1.758189,112.256165,1,1,1.83746,3,Sometimes,0,2,0,0.665439,2,Sometimes,Automobile,Obesity_Type_I
+16232,Female,25.994746,1.611,102.003378,1,1,3,-3.038361576,Sometimes,0,,0,0.008013,0.662277,Sometimes,Public_Transportation,Obesity_Type_III
 11985,Female,20,1.5,65,1,0,2,3,Sometimes,0,2,0,1,1,0,Public_Transportation,Overweight_Level_II
 11986,Male,23,1.7,75,1,1,3,3,Sometimes,0,3,1,3,0,Sometimes,Public_Transportation,Overweight_Level_I
 11987,Female,40,1.5,80,1,1,2,3,Always,0,1,0,0,0,0,Automobile,Obesity_Type_I
@@ -20737,7 +20743,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 20735,Male,21,1.79,89.8,1,0,2,3,Sometimes,0,2,0,1,0,Sometimes,Public_Transportation,Overweight_Level_I
 20736,Male,21,1.62,70,1,1,3,1,Sometimes,0,3,0,1,0,Sometimes,Public_Transportation,Overweight_Level_I
 20737,Female,25.783865,1.63302,104.988925,1,1,3,3,Sometimes,0,1.322004,0,0.24629,0.723154,Sometimes,Public_Transportation,Obesity_Type_III
-20738,Male,23.562135,1.71367,82.130728,1,1,2.043359,2.9774,Sometimes,0,1.226764,0,0.994592,0.969097,Sometimes,Public_Transportation,Overweight_Level_II
+20738,Male,23.562135,,82.130728,1,1,2.043359,2.9774,Sometimes,0,1.226764,0,0.994592,0.969097,Sometimes,Public_Transportation,Overweight_Level_II
 20739,Male,40.501722,1.619128,109.980145,1,1,2.731368,2.65772,Sometimes,0,1.000463,0,1.144876,0.474836,Sometimes,Public_Transportation,Obesity_Type_II
 20740,Female,20,1.59,49,0,0,2,3,Sometimes,0,2,0,2,0,Sometimes,Public_Transportation,0rmal_Weight
 20741,Male,22.277859,1.791174,105.037203,1,1,2.997951,3,Sometimes,0,2.03415,0,2,0.508663,Sometimes,Public_Transportation,Obesity_Type_I
@@ -20747,6 +20753,7 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 20745,Female,19.97981,1.742901,49.932199,0,1,2.969233,3.489918,Frequently,0,2.721769,0,2,1,Sometimes,Public_Transportation,Insufficient_Weight
 20746,Female,18,1.61,64,1,1,3,3,Sometimes,0,2,0,1,1,Sometimes,Public_Transportation,0rmal_Weight
 20747,Male,33,1.72,99,0,1,2,1,Sometimes,0,2,0,2,0,Frequently,Automobile,Overweight_Level_II
+20097,Male,21.849705,1.650012,88.675503,1,1,2.884212,-3.038361576,Sometimes,0,,0,1,1,0,Public_Transportation,Overweight_Level_II
 20748,Male,21,1.757958,89.048151,1,1,1.882235,3,Sometimes,0,2,0,0.988668,1,0,Public_Transportation,Overweight_Level_II
 20749,Female,25.783865,1.64639,104.835346,1,1,3,3,Sometimes,0,1.530992,0,0.01586,0.445495,Sometimes,Public_Transportation,Obesity_Type_III
 20750,Male,18.827008,1.753321,80,1,1,2.826251,2.256119,Sometimes,0,2.13755,0,0.753782,0.051858,0,Public_Transportation,Overweight_Level_I
@@ -20755,5 +20762,5 @@ id,Gender,Age,Height,Weight,family_history_with_overweight,FAVC,FCVC,NCP,CAEC,SM
 20753,Male,25.137087,1.766626,114.187096,1,1,2.919584,3,Sometimes,0,2.151809,0,1.330519,0.19668,Sometimes,Public_Transportation,Obesity_Type_II
 20754,Male,18,1.71,50,0,1,3,4,Frequently,0,1,0,2,1,Sometimes,Public_Transportation,Insufficient_Weight
 20755,Male,20.101026,1.819557,105.580491,1,1,2.407817,3,Sometimes,0,2,0,1.15804,1.198439,0,Public_Transportation,Obesity_Type_II
-20756,Male,33.852953,1.7,83.520113,1,1,2.671238,1.971472,Sometimes,0,2.144838,0,0,0.973834,0,Automobile,Overweight_Level_II
+20756,Male,33.852953,1.7,,1,1,2.671238,1.971472,Sometimes,0,2.144838,0,0,0.973834,0,Automobile,Overweight_Level_II
 20757,Male,26.680376,1.816547,118.134898,1,1,3,3,Sometimes,0,2.003563,0,0.684487,0.713823,Sometimes,Public_Transportation,Obesity_Type_II
