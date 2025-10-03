@@ -114,3 +114,42 @@ def validate_dataframe(df: pd.DataFrame, cfg: dict):
             report["rare_categories"][col] = {str(k): int(v) for k, v in rare.items()}
 
     return report
+
+def apply_numeric_precision(df: pd.DataFrame, precision_map: dict):
+    """
+    Rounds numeric columns to the specified number of decimal places.
+    precision_map: { "col_name": int_decimals, ... }
+      - 0 decimals => casts to pandas nullable Int64 for clean whole numbers.
+    Returns: (df, report) where report is {col: changed_values_count}
+    """
+    report = {}
+    if not precision_map:
+        return df, report
+
+    for col, dec in precision_map.items():
+        if col not in df.columns:
+            continue  # skip silently if column isn't present
+
+        # ensure numeric (coerce non-numeric to NaN)
+        if not pd.api.types.is_numeric_dtype(df[col]):
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
+        before = df[col].copy()
+        df[col] = df[col].round(int(dec))
+
+        if int(dec) == 0:
+            # cast to Int64 so you don't get ".0" in outputs
+            try:
+                df[col] = df[col].astype("Int64")
+            except Exception:
+                # if cast fails (e.g., all NaN), leave as-is
+                pass
+
+        # count changed values (ignore NaNs)
+        mask_before = before.notna()
+        mask_after = df[col].notna()
+        compared = mask_before & mask_after
+        changed = int((before[compared] != df[col][compared]).sum())
+        report[col] = changed
+
+    return df, report
