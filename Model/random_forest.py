@@ -73,6 +73,7 @@ y_pred = pipe.predict(X_test)
 print("Accuracy:", round(accuracy_score(y_test, y_pred), 4))
 print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
+
 def _final_estimator(p):
     return p.steps[-1][1] if isinstance(p, Pipeline) else p
 
