@@ -118,6 +118,9 @@ def get_class_labels(pipe, meta):
 
 CLASS_LABELS = get_class_labels(pipe, meta)
 
+# def scale_to_normalized(value, original_min, original_max, normalized_min, normalized_max):
+#     return normalized_min + (value - original_min) * (normalized_max - normalized_min) / (original_max - original_min)
+
 st.title("🍏 Obesity Class Predictor")
 
 with st.form("input_form"):
@@ -128,11 +131,11 @@ with st.form("input_form"):
         age = st.number_input("Age (years)", min_value=14, max_value=100, value=25, step=1)
     with col2:
         height = st.number_input(
-            "Height (meters) — optional (for BMI calc)",
+            "Height (meters)",
             min_value=1.0, max_value=2.5, value=1.70, step=0.01, format="%.2f"
         )
         weight = st.number_input(
-            "Weight (kg) — optional (for BMI calc)",
+            "Weight (kg)",
             min_value=30.0, max_value=250.0, value=70.0, step=0.5
         )
 
@@ -149,12 +152,12 @@ with st.form("input_form"):
         smokes = st.selectbox("Smokes", ["No", "Yes"])
         monitors_calories = st.selectbox("Monitors calories (SCC)", ["No", "Yes"])
     with c2:
-        fcvc = st.slider("Vegetables frequency per meal (FCVC)", 1.0, 3.0, 2.0, 0.1)
+        fcvc = st.slider("Vegetables frequency per meal (FCVC)", 1, 6, 2, 1)
         ncp = st.slider("Number of main meals (NCP)", 1, 6, 3, 1)
-        water_intake = st.slider("Daily water intake (litres)", 1.0, 3.0, 2.0, 0.1)
+        water_intake = st.slider("Daily water intake (litres)", 1.0, 6.0, 2.0, 0.5)
     with c3:
-        faf = st.slider("Physical activity (FAF; hours/day)", 0.0, 3.0, 1.0, 0.5)
-        screen_time = st.slider("Screen/tech time (hours/day)", 0.0, 2.0, 1.0, 0.5)
+        faf = st.slider("Physical activity (hours/day)", 0.0, 12.0, 1.0, 0.5)
+        screen_time = st.slider("Screen/tech time (hours/day)", 0.0, 12.0, 1.0, 0.5)
 
     st.subheader("Choices")
     c4, c5 = st.columns(2)
@@ -168,6 +171,12 @@ with st.form("input_form"):
         )
 
     submitted = st.form_submit_button("Predict")
+
+# fcvc = scale_to_normalized(fcvc, 1, 6, 1.0, 3.0)
+# ncp = scale_to_normalized(ncp, 1, 6, 1.0, 3.0)
+# water_intake = scale_to_normalized(water_intake, 1.0, 6.0, 1.0, 3.0)
+# faf = scale_to_normalized(faf, 0, 12, 0.0, 3.0)
+# screen_time = scale_to_normalized(screen_time, 0, 12, 0.0, 3.0)
 
 def bool_to_int(x: str) -> int:
     return 1 if str(x).lower() in ["yes", "1", "true"] else 0
