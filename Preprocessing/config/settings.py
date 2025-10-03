@@ -26,6 +26,9 @@ COLUMN_RENAME_MAP = {
     "0be1dad": "obesity_class"
 }
 
+WORD_RENAME_MAP = {
+    "0rmal_Weight": "Normal_Weight",
+}
 
 # --- Validation settings ---
 
@@ -36,7 +39,7 @@ VALIDATION = {
 
     # Columns that must exist (before renaming)
     "REQUIRED_COLUMNS": [
-        "id","Gender","Age","Height","Weight","family_history_with_overweight","FAVC","FCVC","NCP",
+        "Gender","Age","Height","Weight","family_history_with_overweight","FAVC","FCVC","NCP",
         "CAEC","SMOKE","CH2O","SCC","FAF","TUE","CALC","MTRANS","0be1dad"
     ],
 
@@ -68,6 +71,17 @@ VALIDATION = {
     "RARE_CATEGORY_MIN_COUNT": 10,  # flag categories with < 10 rows
 }
 
+    # Map column name -> number of decimal places to keep (0 = whole numbers)
+NUMERIC_PRECISION = {
+    # examples (tweak or leave empty to disable per column):
+    "Age": 0,
+    "water_intake": 4,            # make whole numbers
+    "vegtables": 4,
+    "main_meals": 4,
+    "physical_activity": 4,
+    "screen_time" :4,
+    "BMI": 2,
+}
 
 REDUCTION = {
     # 0) Optional row downsampling for dev speed (set None to keep all)

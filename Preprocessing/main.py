@@ -1,9 +1,9 @@
 import os
 import pandas as pd
-from config.settings import MISSING_VALUE_POLICY, COLUMN_RENAME_MAP, VALIDATION, REDUCTION
+from config.settings import MISSING_VALUE_POLICY, COLUMN_RENAME_MAP, VALIDATION, REDUCTION, NUMERIC_PRECISION, WORD_RENAME_MAP
 from modules.cleaner import remove_duplicates, handle_missing_values
-from modules.transformer import standardize_columns
-from modules.validator import validate_dataframe
+from modules.transformer import standardize_columns, apply_word_rename
+from modules.validator import validate_dataframe, apply_numeric_precision
 from modules.reducer import reduce_dataset
 
 # Paths
@@ -67,12 +67,28 @@ def main():
     # 3) standardize column names per settings
     df, rename_report = standardize_columns(df, COLUMN_RENAME_MAP)
 
+    # Apply word renaming
+    df, word_rename_report = apply_word_rename(df, WORD_RENAME_MAP)
+    if word_rename_report:
+        changed_cols = ", ".join(f"{c}={n}" for c, n in word_rename_report.items())
+        print(f" Word normalization applied: {changed_cols}")
+    else:
+        print(" Word normalization: none (no matches).")
+
     # 4) reduce dataset (rows/columns) per settings
     # Determine current label name (after renaming)
     label_original = VALIDATION.get("LABEL_COLUMN")
     label_current = COLUMN_RENAME_MAP.get(label_original, label_original)
     df, red = reduce_dataset(df, REDUCTION, label_col=label_current)
 
+    # Round off values
+    df, precision_report = apply_numeric_precision(df, NUMERIC_PRECISION)
+    if precision_report:
+        changed_cols = ", ".join(f"{c}={n}" for c, n in precision_report.items())
+        print(f" Numeric precision applied: {changed_cols}")
+    else:
+        print(" Numeric precision: none (no rules or no matching columns).")
+        
     # 5) save once
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     output_file = os.path.join(
@@ -131,6 +147,7 @@ def main():
     if red.get("high_corr", {}).get("dropped"):
         print(f" High-corr dropped (> {REDUCTION.get('HIGH_CORR_THRESHOLD', 0.92)}): "
               f"{', '.join(red['high_corr']['dropped'])}")
+
 
     print(f" Cleaned file saved at: {output_file}")
 
