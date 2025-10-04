@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+
 import joblib
 import numpy as np
 import pandas as pd
@@ -242,7 +243,7 @@ def load_artifacts(model_path: Path, meta_paths):
 try:
     pipe, meta, meta_path = load_artifacts(MODEL_PATH, META_PATHS)
 except Exception as e:
-    st.error(f"Could not load prediction model. {e}")
+    st.error(f"🚨 Could not load prediction model. {e}")
     st.stop()
 
 def final_estimator(p):
