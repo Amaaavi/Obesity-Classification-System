@@ -4,6 +4,8 @@ import joblib
 import numpy as np
 import pandas as pd
 import streamlit as st
+import streamlit.components.v1 as components
+
 
 st.set_page_config(
     page_title="Health Analytics | Obesity Risk Assessment",
@@ -49,7 +51,6 @@ html, body, [class*="css"] {{
 }}
 
 .stApp {{
-  /* Layered, low-contrast medical background with subtle pattern */
   background:
     radial-gradient(1200px 600px at 20% -10%, {PALETTE['grad_end']} 0%, transparent 70%),
     radial-gradient(1200px 600px at 80% 0%, {PALETTE['grad_mid']} 0%, transparent 65%),
@@ -148,7 +149,6 @@ html, body, [class*="css"] {{
   height: 100%; background: linear-gradient(90deg, {PALETTE['primary']} 0%, {PALETTE['accent']} 100%);
 }}
 
-/* Primary button style */
 .stButton button {{
   background: linear-gradient(135deg, {PALETTE['primary']} 0%, {PALETTE['primary_dim']} 100%) !important;
   color: #fff !important;
@@ -162,7 +162,7 @@ html, body, [class*="css"] {{
   box-shadow: 0 10px 24px -14px rgba(13,148,136,.40) !important;
   filter: saturate(.95) brightness(.98);
 }}
-/* Ensure nested spans/icons are white too */
+
 .stButton button * {{
   color: #fff !important;
   fill: #fff !important;
@@ -175,20 +175,27 @@ html, body, [class*="css"] {{
   filter: saturate(1) brightness(1);
 }}
 
-/* Streamlit form submit button uses different markup; force white text there too */
 div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-secondary"],
 div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-primary"]{{
   background: linear-gradient(135deg, {PALETTE['primary']} 0%, {PALETTE['primary_dim']} 100%) !important;
   color: #fff !important;
   border: none !important;
-  box-shadow: 0 10px 24px -14px rgba(13,148,136,.40) !important;
+  box-shadow: 0 10px 24px -14px rgba(13,148,136,.40) !important; /* note the .40 */
 }}
-div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-secondary"] p,
-div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-primary"] p,
+
+div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-secondary"] span,
+div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-primary"] span,
 div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-secondary"] svg,
 div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-primary"] svg{{
   color: #fff !important;
   fill: #fff !important;
+}}
+
+div[data-testid="stFormSubmitButton"] button:disabled{{
+  opacity: 1 !important;
+}}
+div[data-testid="stFormSubmitButton"] button:disabled *{{
+  color:#fff !important; fill:#fff !important;
 }}
 
 /* Subtle grid overlay for depth */
@@ -200,11 +207,9 @@ div[data-testid="stFormSubmitButton"] button[data-testid="baseButton-primary"] s
     repeating-linear-gradient(90deg,rgba(2,6,23,.02),rgba(2,6,23,.02) 1px,transparent 1px,transparent 24px);
 }}
 
-/* Ensure labels/text have strong contrast */
 label{{color:{PALETTE['text_muted']};font-weight:600;}}
 [data-testid="stMarkdownContainer"], .small{{color:{PALETTE['text_muted']};}}
 
-/* Footer */
 .app-footer{{border-top: 1px solid {PALETTE['card_border']}; margin-top:1.2rem; padding:1rem 0; color:{PALETTE['text_muted']}; text-align:center;}}
 .app-footer .brand{{font-weight:700;color:{PALETTE['text']};}}
 </style>
@@ -251,6 +256,16 @@ def final_estimator(p):
     except Exception:
         return p
 
+def scroll_to_results():
+    components.html(
+        """
+        <script>
+        const el = window.parent.document.getElementById('results_top');
+        if (el) { el.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+        </script>
+        """,
+        height=0,
+    )
 
 def get_column_transformer(pipeline):
     try:
@@ -453,10 +468,11 @@ with left:
 
         st.markdown("<div class='small'>Fields marked with standard units. Ensure values reflect typical patterns over the last 3 months.</div>", unsafe_allow_html=True)
         st.markdown("<br>", unsafe_allow_html=True)
-        submitted = st.form_submit_button("Run Assessment")
+        submitted = st.form_submit_button("Run Assessment", type="primary")
 
 with right:
     st.markdown("<div class='section-header'><h3>Results</h3></div>", unsafe_allow_html=True)
+    st.markdown("<div id='results_top'></div>", unsafe_allow_html=True)
     placeholder = st.empty()
 
 
@@ -577,10 +593,12 @@ if submitted:
                     flags.append(("High BMI", PALETTE["danger"]))
                 elif bmi >= 25:
                     flags.append(("Elevated BMI", PALETTE["warning"]))
-                if faf < 0.5:
+                if faf < 1.0:
                     flags.append(("Very low activity", PALETTE["warning"]))
-                if water_intake < 1.5:
+                if water_intake < 2.5:
                     flags.append(("Low hydration", PALETTE["warning"]))
+                if screen_time > 6.0:
+                    flags.append(("High screen time", PALETTE["warning"]))
 
                 if flags:
                     st.markdown("### Attention areas")
@@ -589,6 +607,7 @@ if submitted:
                             f"<div class='custom-card' style='border-left:6px solid {color}'>🛈 {k}</div>",
                             unsafe_allow_html=True,
                         )
+            scroll_to_results()
 
     except Exception as e:
         with right:
