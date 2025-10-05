@@ -1,14 +1,14 @@
 
-## 🩺 Obesity Classification System
+##  Obesity Classification System
 
-### 📘 Overview
+###  Overview
 
 The **Obesity Classification System** is a machine learning–based web application that predicts a person’s obesity level based on their lifestyle and physical attributes.
 It uses **Python (scikit-learn)** for model training and **Streamlit** for the frontend interface, allowing users to easily check their obesity risk through an interactive web form.
 
 ---
 
-### 🎯 Objectives
+###  Objectives
 
 * Help users understand their obesity risk level.
 * Encourage healthy lifestyle changes with personalized feedback.
@@ -16,7 +16,7 @@ It uses **Python (scikit-learn)** for model training and **Streamlit** for the f
 
 ---
 
-### 🧠 Machine Learning Models Used
+###  Machine Learning Models Used
 
 We trained and compared multiple classification algorithms:
 
@@ -28,7 +28,7 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 
 ---
 
-### ⚙️ Tech Stack
+###  Tech Stack
 
 **Backend / Model**
 
@@ -69,16 +69,16 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 
 ---
 
-### 💻 How to Run the Project
+###  How to Run the Project
 
-#### 1️⃣ Clone the repository
+#### 1️. Clone the repository
 
 ```bash
 git clone https://github.com/<your-username>/FDM_Preprocessing.git
 cd FDM_Preprocessing
 ```
 
-#### 2️⃣ Install dependencies
+#### 2️. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -90,20 +90,20 @@ pip install -r requirements.txt
 pip install streamlit scikit-learn pandas numpy joblib
 ```
 
-#### 3️⃣ Run the app
+#### 3️. Run the app
 
 ```bash
 streamlit run app.py
 ```
 
-#### 4️⃣ Open in browser
+#### 4️. Open in browser
 
 Visit: [http://localhost:8501](http://localhost:8501)
 You’ll see your Obesity Classification web app running!
 
 ---
 
-### 📊 Example Output
+###  Example Output
 
 After submitting your details, the app shows:
 
@@ -116,11 +116,11 @@ After submitting your details, the app shows:
 ---
 
 
-### 🚀 Future Improvements
+###  Future Improvements
 
 * Deploy on cloud (e.g., Streamlit Cloud or Render).
 
----
+
 
 
 
