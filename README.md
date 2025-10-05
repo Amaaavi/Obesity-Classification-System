@@ -70,7 +70,23 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 ---
 
 ###  How to Run the Project
+1.Open VS Code
+Open the terminal and navigate to your project folder
+Run the following command to train the model:
 
+python Model/random_forest.py
+
+This will train the Random Forest model and automatically save it for later use.
+
+2.Run the Streamlit App
+In a new terminal, stay inside the same project directory.
+Start the Streamlit app:
+
+streamlit run app.py
+
+3.Before running the model, make sure required packages are installed:
+
+pip install pandas numpy scikit-learn joblib  
 
 
 ---
