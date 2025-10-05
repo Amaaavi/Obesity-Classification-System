@@ -46,7 +46,7 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 
 ---
 
-### 🧩 System Architecture
+###  System Architecture
 
 1. **Data Preprocessing**
 
