@@ -71,35 +71,7 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 
 ###  How to Run the Project
 
-#### 1️. Clone the repository
 
-```bash
-git clone https://github.com/<your-username>/FDM_Preprocessing.git
-cd FDM_Preprocessing
-```
-
-#### 2️. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-*(If `requirements.txt` doesn’t exist yet, just run)*
-
-```bash
-pip install streamlit scikit-learn pandas numpy joblib
-```
-
-#### 3️. Run the app
-
-```bash
-streamlit run app.py
-```
-
-#### 4️. Open in browser
-
-Visit: [http://localhost:8501](http://localhost:8501)
-You’ll see your Obesity Classification web app running!
 
 ---
 
