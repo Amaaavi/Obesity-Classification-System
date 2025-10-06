@@ -74,6 +74,8 @@ After evaluation, the best-performing model was integrated into the Streamlit we
 Open the terminal and navigate to your project folder
 Run the following command to train the model:
 
+pip install pandas numpy scikit-learn joblib 
+
 python Model/random_forest.py
 
 This will train the Random Forest model and automatically save it for later use.
@@ -83,11 +85,6 @@ In a new terminal, stay inside the same project directory.
 Start the Streamlit app:
 
 streamlit run app.py
-
-3.Before running the model, make sure required packages are installed:
-
-pip install pandas numpy scikit-learn joblib  
-
 
 ---
 
@@ -103,10 +100,6 @@ After submitting your details, the app shows:
 
 ---
 
-
-###  Future Improvements
-
-* Deploy on cloud (e.g., Streamlit Cloud or Render).
 
 
 
